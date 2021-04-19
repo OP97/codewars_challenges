@@ -9,11 +9,11 @@ def validBraces(string):
                     ")": "("               
                  }
     brace_stack = []
-    for i in range(len(string)):
-        if string[i] in list(brace_dict.values()):
-            brace_stack.append(string[i])
-        if string[i] in list(brace_dict.keys()):
-            if brace_stack and brace_stack[-1] == brace_dict[string[i]]:
+    for brace in string:
+        if brace in list(brace_dict.values()):
+            brace_stack.append(brace)
+        if brace in list(brace_dict.keys()):
+            if brace_stack and brace_stack[-1] == brace_dict[brace]:
                 brace_stack.pop()
             else:
                 return False
