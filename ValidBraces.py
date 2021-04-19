@@ -18,6 +18,4 @@ def validBraces(string):
             else:
                 return False
                 
-    if not brace_stack:
-        return True
-    return False
+    return not brace_stack
